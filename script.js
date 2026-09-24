@@ -41,14 +41,21 @@ async function name() {
     let rej=await fetch(`http://www.themealdb.com/api/json/v1/1/search.php?s=${search}`);
     let ram=await rej.json();
     let data=ram.meals.map((item)=>{
-        return `<div>
+        
+        return ` 
+        <div class="area">
+       
         <h6>${item.strCategory}</h6>
         <img src="${item.strMealThumb}">
         <p>${item.strArea}</p>
         <h5>${item.strMeal}</h5>
         </div>`
     })
-    fill.innerHTML=data.join("")
+    fill.innerHTML= `
+    <h1 class="meals-heading">Meals</h1>
+    ${data.join("")}
+    `
+    
         
     
 }
