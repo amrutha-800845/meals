@@ -4,7 +4,10 @@ async function user() {
     let data=await resolve.json();
     let result=data.categories.map((value)=>{
          return `<div class="main" >
-         <button class="value"><h6>${value.strCategory}</h6><hr>
+<button class="value" onclick="location.href='second.html?category=${encodeURIComponent(value.strCategory)}'">
+    <h6>${value.strCategory}</h6>
+    <hr>
+</button>
          </div>`
         
     })
@@ -21,8 +24,10 @@ async function pic() {
     let result=data.categories.map((value)=>{
         return ` <div class="pic1">
         <h6 class="hi">${value.strCategory}</h6>
-        <img src="${value.strCategoryThumb}">
-
+    
+<a href="second.html?category=${encodeURIComponent(value.strCategory)}">
+    <img src="${value.strCategoryThumb}" >
+</a>
 
         </div> `
     })
@@ -55,8 +60,24 @@ async function name() {
     <h1 class="meals-heading">Meals</h1>
     ${data.join("")}
     `
+}
+
+
+
+    /* linking img to second page */
+
+    
+    let chicken=document.getElementById("chicken");
+    async function veg(cat) {
+        let page= await fetch("https://www.themealdb.com/api/json/v1/1/categories.php")
+        let data1=await page.json();
+        let temp=data1.categories.find((value)=>{
+            return value.strCategory === cat;
+        })
+        chicken.innerHTML=temp;
+    }
     
         
     
-}
+
  
