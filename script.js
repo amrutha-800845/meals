@@ -4,7 +4,7 @@ async function user() {
     let data=await resolve.json();
     let result=data.categories.map((value)=>{
          return `<div class="main" >
-<button class="value" onclick="location.href='second.html?category=${encodeURIComponent(value.strCategory)}'">
+<button class="value" onclick="veg('${value.strCategory}')">
     <h6>${value.strCategory}</h6>
     <hr>
 </button>
@@ -25,9 +25,9 @@ async function pic() {
         return ` <div class="pic1">
         <h6 class="hi">${value.strCategory}</h6>
     
-<a href="second.html?category=${encodeURIComponent(value.strCategory)}">
-    <img src="${value.strCategoryThumb}" >
-</a>
+
+    <img src="${value.strCategoryThumb}" onclick="veg('${value.strCategory}')">
+
 
         </div> `
     })
@@ -67,17 +67,72 @@ async function name() {
     /* linking img to second page */
 
     
-    let chicken=document.getElementById("chicken");
-    async function veg(cat) {
-        let page= await fetch("https://www.themealdb.com/api/json/v1/1/categories.php")
-        let data1=await page.json();
-        let temp=data1.categories.find((value)=>{
-            return value.strCategory === cat;
-        })
-        chicken.innerHTML=temp;
-    }
-    
+    // let chicken=document.getElementById("chicken");
+    // async function veg(cat) {
+    //     let page= await fetch("https://www.themealdb.com/api/json/v1/1/categories.php")
+    //     let data1=await page.json();
+    //     let temp=data1.categories.find((value)=>{
+    //         return value.strCategory === cat;
+    //     })
+    //     chicken.innerHTML=temp;
+    // }
+    /* connecting to another page */
         
     
+    async function veg(pro) {
+        window.open(`second.html?category=${encodeURIComponent(pro)}`,"_self")
+        
+    }
+ async function temp() {
+    let match = document.getElementById("match");
 
- 
+    let res = new URLSearchParams(window.location.search);
+    let category = res.get("category");
+
+    // Get category description
+    let resol = await fetch("https://www.themealdb.com/api/json/v1/1/categories.php");
+    let data = await resol.json();
+
+    let categoryData = data.categories.find((value) => {
+        return value.strCategory.toLowerCase() === category.toLowerCase();
+    });
+
+    // Get meals of selected category
+    let meal = await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${encodeURIComponent(category)}`);
+    let mealdata = await meal.json();
+
+    // Description
+    let descript = `
+        <div class="cat">
+            <h2>${categoryData.strCategory}</h2>
+            <h5>${categoryData.strCategoryDescription}</h5>
+        </div>
+    `;
+
+    // Meal heading
+    let heading = `
+        <div class="head">
+            <h2>MEALS</h2>
+        </div>
+    `;
+
+    // Display meals
+    let mean = mealdata.meals.map((value) => {
+        return `
+            <div class="me">
+                <img src="${value.strMealThumb}" alt="${value.strMeal}">
+                <h5>${value.strMeal}</h5>
+            </div>
+        `;
+    });
+
+    match.innerHTML = `
+        ${descript}
+        ${heading}
+        <div class="one1">
+            ${mean.join("")}
+        </div>
+    `;
+}
+
+temp();
