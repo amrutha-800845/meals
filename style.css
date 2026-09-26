@@ -5,7 +5,7 @@
 }
 
 
-/* ================= HEADER ================= */
+/* HEADER */
 
 .logo {
     height: 70px;
@@ -160,7 +160,7 @@
 }
 
 
-/* ================= BANNER ================= */
+/*  BANNER */
 
 #banner {
     width: 100%;
@@ -375,12 +375,17 @@
     flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
+    
+    
 }
 
 .me {
     width: 18%;
     text-align: center;
     margin-top: 30px;
+    background-color: white;
+    border: 1px solid whitesmoke;
+     box-shadow: 0 2px 8px rgba(0 ,0 ,0 ,0.08);
 }
 
 .me img {
@@ -395,5 +400,6 @@
 .head{
     margin-left: 20px;
     text-decoration: underline;
+    
 }
 
