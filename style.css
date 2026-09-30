@@ -465,4 +465,269 @@
 .dec {
     width: 60%;
 }
+.dec h3{
+    color: orangered;
+}
+.dec hr{
+    width:400px;
+    background-color: orangered ;
+    opacity: 1;
+   border: none;
+    height: 5px;
+}
 
+.dec h4,p{
+    color:black;
+}
+.dec h6{
+    /* border: 1px solid; */
+    width: 100px;
+    color: orangered;
+    padding: 2px;
+    text-align: center;
+}
+
+.dataa{
+    margin-left: 70px;
+}
+
+
+
+/* Measurements */
+.data1 {
+    margin-top: 30px;
+    border: 1px solid;
+    margin: 10px;
+    padding: 10px;
+}
+
+
+/* Main description area */
+.dataa {
+    width: 60%;
+    
+   
+   
+}
+
+
+.dec h3 {
+    margin: 0 0 10px;
+    font-size: 24px;
+}
+
+
+.dec hr {
+    border: none;
+    border-top: 1px solid #f15a16;
+    margin-bottom: 20px;
+}
+
+
+.dec{
+margin-left: 250px;
+}
+.dec h4 {
+    font-size: 14px;
+    margin: 10px 0;
+    color: #555;
+}
+
+
+/* Source */
+.dec > p {
+    font-size: 13px;
+    margin: 8px 0;
+    color: #555;
+}
+
+.dec p::before{
+    content: "source:";
+    color: black;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+/* Tags */
+.dec h6 {
+    font-size: 13px;
+    /* margin: 15px 0; */
+    color:orangered;
+   
+}
+.dec h6::before{
+    content: "Tag:";
+    color: black;
+    font-weight: bold;
+}
+.dec h4::before{
+    content: "Category:";
+     color: black;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+
+   /* Ingredients */
+.teja {
+    margin-top: 20px;
+    border: 1px solid;
+    margin: 5px;
+    padding: 5px;
+    /* margin-left: 250px; */
+}
+.teja {
+    background-color: #f15a16;
+    width: 100%;
+    max-width: 500px;
+    padding: 18px 20px;
+    box-sizing: border-box;
+    color: white;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 15px;
+    row-gap: 8px;
+    margin-top: 20px;
+    
+}
+
+
+.teja h5 {
+    grid-column: 1 / -1;
+    margin: 0 0 10px;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+
+.teja p {
+    margin: 0;
+    color: white;
+    font-size: 13px;
+    line-height: 20px;
+    position: relative;
+    padding-left: 23px;
+}
+
+
+.teja p::before {
+    content: counter(ingredient);
+    position: absolute;
+    left: 0;
+    top: 1px;
+    width: 17px;
+    height: 17px;
+    border-radius: 50%;
+    background-color: #1aa7c9;
+    color: white;
+    font-size: 9px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.teja {
+    counter-reset: ingredient;
+    
+}
+.teja p {
+    counter-increment: ingredient;
+}
+.teja p:empty {
+    display: none;
+}
+
+
+
+.data1 {
+     width: 98%;
+    margin-left: 20px;
+    max-width: none;
+    padding: 12px 30px;
+    border: 1px solid #eeeeee;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 80px;
+    row-gap: 12px;
+}
+
+.data1 h5 {
+    grid-column: 1 / -1;
+    margin: 0 0 10px;
+    font-size: 14px;
+    font-weight: normal;
+    color: #333;
+}
+
+
+.data1 p {
+    position: relative;
+    margin: 0;
+    padding-left: 20px;
+    font-size: 13px;
+    color: #555;
+    line-height: 20px;
+}
+.data1 p::before {
+    content: "";
+    position: absolute;
+    left: 2px;
+    top: 7px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: #f15a16;
+}
+.instructions {
+    width: 98%;
+    max-width: none;
+    margin: 25px 0 40px;
+    padding: 18px 30px;
+    border: 1px solid #eeeeee;
+    background-color: #fff;
+    box-sizing: border-box;
+    margin-left: 20px;
+}
+
+.instructions h5 {
+    margin: 0 0 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #f15a16;
+    font-size: 14px;
+    font-weight: normal;
+    color: #333;
+}
+
+.instruction-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 12px;
+}
+
+.check {
+    width: 12px;
+    height: 12px;
+    border: 1px solid #f15a16;
+    color: #f15a16;
+    font-size: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 3px;
+    margin-right: 10px;
+    flex-shrink: 0;
+}
+
+
+.instruction-item p {
+    margin: 0;
+    padding: 0;
+    color: #555;
+    font-size: 12px;
+    line-height: 1.7;
+    flex: 1;
+}

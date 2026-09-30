@@ -253,7 +253,7 @@ async function getMeal() {
         ${desc}
     </div>
 `;
-    let valli = document.getElementById("ammu")
+    let valli = document.getElementById("valli")
     valli.innerHTML = `  ${name} ${details} ${result} ${dd} ${instruc}`
 }
 
