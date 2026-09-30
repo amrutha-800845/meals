@@ -144,7 +144,7 @@ function name(last){
 
 }
 
-async function finder() {
+async function finder1() {
 
     let cream= new URLSearchParams(window.location.search);
     let finder=cream.get("find");
@@ -153,6 +153,82 @@ async function finder() {
     let temp=data.finder.find((value)=>{
         return value.strMeal.toLowerCase() === finder.toLowerCase();
         
-    })
+    });
+    
+    
+
+let java=`
+<div class="meal-descript">
+<h4> >>${temp.strMeal}</h4>
+</div>`;
+  
+
+let detail =`<div class="image">
+<h3>MEAL DETAILS</h3><hr>
+</div>
+`
+
+
+let img=`
+<div class="image">
+<img src="${temp.strMealThumb}">
+</div>
+`;
+
+
+let desc=`
+<div class="dataa">
+<div class="dec">
+<h3>${temp.strMeal}</h3> <hr>
+         <h4>${temp.strCategory}</h4>
+         <p> ${temp.strSource}</p>
+         <h6>${temp.strTags}</h6>
+
+         <div class ="teja">
+         <h5>ingridents</h5>
+         <p>${temp.strIngredient1}</p>
+         <p>${temp.strIngredient2}</p>
+         <p>${temp.strIngredient3}</p>
+         <p>${temp.strIngredient4}</p>
+         <p>${temp.strIngredient5}</p>
+         <p>${temp.strIngredient6}</p>
+         <p>${temp.strIngredient7}</p>
+         <p>${temp.strIngredient8}</p>
+         <p>${temp.strIngredient9}</p>
+         <p>${temp.strIngredient10}</p>
+         <p>${temp.strIngredient11}</p>
+         <p>${temp.strIngredient12}</p>
+         <p>${temp.strIngredient13}</p>
+         <p>${temp.strIngredient14}</p>
+         <p>${temp.strIngredient15}</p>
+         <p>${temp.strIngredient16}</p>
+         <p>${temp.strIngredient17}</p>
+         <p>${temp.strIngredient18}</p>
+         <p>${temp.strIngredient19}</p>
+         <p>${temp.strIngredient20}</p>
+         </div>
+         </div>
+         </div>
+        `;
+
+    let measurements = "";
+    for (let i = 1; i <= 20; i++) {
+        let measure = mealData[`strMeasure${i}`];
+        if (measure && measure.trim() !== "") {
+            measurements += `
+            <p>${measure.trim()}</p>
+        `;
+        }
+    }
+
+    let dd = `
+    <div class="data1">
+        <h5>Measure:</h5>
+        ${measurements}
+    </div>
+`;
+
+
+
 }
 
