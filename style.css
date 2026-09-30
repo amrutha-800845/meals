@@ -409,4 +409,30 @@
     text-decoration: underline;
     
 }
+/* last page */
+
+.meal-descrip{
+    border: 1px solid;
+    margin-top: 10px;
+    color:white;
+    background-color: orangered;
+    padding: 8px;
+    width: 99%;
+    margin-left: 8px;
+
+}
+
+.detail{
+    color: black;
+    margin-top: 40px;
+    margin-left: 8px;
+}
+.detail hr {
+    width: 70px;
+    background-color: orangered ;
+    opacity: 1;
+   border: none;
+    height: 5px;
+
+}
 
