@@ -137,3 +137,22 @@ async function name() {
 
 temp();
 
+
+/* last page */
+function name(last){
+    window.open.apply(`last-page.html?meal=${encodeURIComponent(last)}`,"_self");
+
+}
+
+async function finder() {
+
+    let cream= new URLSearchParams(window.location.search);
+    let finder=cream.get("find");
+    let resolve= await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${encodeURIComponent(finder)}`);
+    let data= await resolve.json();
+    let temp=data.finder.find((value)=>{
+        return value.strMeal.toLowerCase() === finder.toLowerCase();
+        
+    })
+}
+
