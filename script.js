@@ -112,7 +112,7 @@ async function name() {
     // Meal heading
     let heading = `
         <div class="head">
-            <h2>MEALS</h2>
+            <h2 class="hello">MEALS</h2>
         </div>
     `;
 
